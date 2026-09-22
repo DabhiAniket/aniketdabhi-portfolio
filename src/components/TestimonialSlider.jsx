@@ -53,7 +53,7 @@ const TestimonialSlider = () => {
       speed={3500}
       loop={true}
       modules={[Navigation, Pagination, Autoplay]}
-      className="h-100"
+      className="h-[400px] sm:h-[480px] pb-12 overflow-hidden"
     >
       {testimonialData.map((person, i) => (
         <SwiperSlide key={i}>

@@ -26,13 +26,13 @@ function App() {
 
       {/* Global Background Animation for other pages */}
       {location.pathname !== "/" && (
-        <div className="w-full h-full absolute right-0 bottom-0 pointer-events-none z-0 mix-blend-screen">
+        <div className="fixed inset-0 pointer-events-none z-0 mix-blend-screen">
           <ParticlesContainer />
         </div>
       )}
 
       <AnimatePresence mode="wait">
-        <motion.div key={location.pathname} className="h-full">
+        <motion.div key={location.pathname}>
           <Transition />
           <Routes location={location} key={location.pathname}>
             <Route path="/" element={<Home />} />

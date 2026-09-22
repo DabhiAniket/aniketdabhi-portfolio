@@ -9,9 +9,9 @@ import { fadeIn } from "@/variants";
 
 const Home = () => {
   return (
-    <div className="bg-primary/60 h-full">
-      <div className="w-full h-full bg-linear-to-r from-primary/10 via-black/30 to-black/10">
-        <div className="text-center flex flex-col justify-center xl:pt-40 xl:text-left h-full container mx-auto">
+    <div className="bg-primary/60 min-h-screen relative overflow-hidden">
+      <div className="w-full h-full bg-linear-to-r from-primary/10 via-black/30 to-black/10 min-h-screen flex flex-col justify-center">
+        <div className="text-center flex flex-col justify-center xl:text-left container mx-auto pt-44 pb-28 lg:pt-0 lg:pb-0">
           <motion.h1
             variants={fadeIn("down", 0.2)}
             initial="hidden"

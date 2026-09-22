@@ -14,7 +14,7 @@ const About = () => {
   const [index, setIndex] = useState(0);
 
   return (
-    <div className="h-full bg-primary/30 py-32 text-center xl:text-left">
+    <div className="min-h-screen bg-primary/30 pt-44 pb-28 lg:pt-0 lg:pb-0 text-center xl:text-left flex flex-col justify-center">
       <Circles />
 
       <motion.div
@@ -118,7 +118,7 @@ const About = () => {
           initial="hidden"
           animate="show"
           exit="hidden"
-          className="flex flex-col w-full xl:max-w-[48%] h-120"
+          className="flex flex-col w-full xl:max-w-[48%] min-h-40 xl:h-120 mt-8 xl:mt-0"
         >
           <div className="flex gap-x-4 xl:gap-x-8 mx-auto xl:mx-0 mb-4">
             {aboutData.map((item, itemI) => (

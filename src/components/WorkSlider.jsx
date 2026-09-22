@@ -19,7 +19,7 @@ const WorkSlider = () => {
         clickable: true,
       }}
       modules={[Pagination]}
-      className="h-70 sm:h-120"
+      className="h-[280px] sm:h-[480px] pb-12 overflow-hidden"
     >
       {workData.slides.map((slide, i) => (
         <SwiperSlide key={i}>

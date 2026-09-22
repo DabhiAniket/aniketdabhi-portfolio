@@ -78,7 +78,7 @@ const ContactForm = () => {
       autoComplete="off"
       autoCapitalize="off"
     >
-      <div className="flex gap-x-6 w-full">
+      <div className="flex flex-col sm:flex-row gap-6 w-full">
         <div className="flex-1 min-w-0">
           <input
             type="text"
@@ -147,8 +147,8 @@ const ContactForm = () => {
 
 const Contact = () => {
   return (
-    <div className="h-full bg-primary/30 overflow-y-auto">
-      <div className="container mx-auto py-32 text-center xl:text-left flex items-center justify-center h-full">
+    <div className="min-h-screen bg-primary/30 pb-28 xl:pb-0">
+      <div className="container mx-auto pt-44 pb-32 xl:py-32 text-center xl:text-left flex items-center justify-center h-full">
         <div className="flex flex-col w-full max-w-175">
           <motion.h2
             variants={fadeIn("up", 0.2)}
