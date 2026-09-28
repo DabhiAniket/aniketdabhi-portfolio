@@ -6,7 +6,6 @@ import { Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
-import "swiper/css/free-mode";
 import "swiper/css/pagination";
 
 import { workData } from "@/data/portfolio";
@@ -19,11 +18,11 @@ const WorkSlider = () => {
         clickable: true,
       }}
       modules={[Pagination]}
-      className="h-[280px] sm:h-[480px] pb-12 overflow-hidden"
+      className="pb-12! overflow-hidden"
     >
       {workData.slides.map((slide, i) => (
         <SwiperSlide key={i}>
-          <div className="grid grid-cols-2 grid-rows-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {slide.images.map((image, imageI) => (
               <div
                 className="relative rounded-lg overflow-hidden flex items-center justify-center group"
@@ -33,12 +32,15 @@ const WorkSlider = () => {
                   <img
                     src={image.path}
                     alt={image.title}
-                    width={500}
-                    height={300}
+                    width={800}
+                    height={450}
+                    loading="lazy"
+                    decoding="async"
+                    className="w-full h-auto aspect-video object-cover group-hover:scale-105 transition-transform duration-700"
                   />
 
                   <div
-                    className="absolute inset-0 bg-linear-to-l from-transparent via-[#e838cc] to-[#4a22bd] opacity-0 group-hover:opacity-80 transition-all duration-700"
+                    className="absolute inset-0 bg-linear-to-l from-transparent via-[#e838cc] to-[#4a22bd] opacity-0 group-hover:opacity-80 transition-opacity duration-700"
                     aria-hidden
                   />
 

@@ -4,14 +4,22 @@ import { motion } from "framer-motion";
 
 import Bulb from "@/components/Bulb";
 import Circles from "@/components/Circles";
+import Decoration from "@/components/Decoration";
 import ServiceSlider from "@/components/ServiceSlider";
 import { fadeIn } from "@/variants";
 
 const Services = () => {
   return (
-    <div className="min-h-screen bg-primary/30 pt-44 pb-28 xl:pt-36 xl:pb-0 flex items-center">
+    <div className="relative min-h-screen bg-primary/30 pt-40 sm:pt-44 pb-32 lg:pt-36 xl:pt-36 xl:pb-12 flex items-center">
       <Circles />
-      <div className="container mx-auto">
+      <Decoration
+        src="/cloud.webp"
+        width={520}
+        height={520}
+        delay="1s"
+        className="hidden min-[360px]:block top-37.5 right-2 w-14 sm:top-36 sm:right-8 sm:w-24 lg:top-28 lg:w-20 xl:top-auto xl:right-auto xl:left-[12%] xl:bottom-8 xl:w-48"
+      />
+      <div className="relative z-10 container mx-auto">
         <div className="flex flex-col xl:flex-row gap-x-8">
           <div className="text-center flex xl:w-[30vw] flex-col lg:text-left mb-4 xl:mb-0">
             <motion.h2

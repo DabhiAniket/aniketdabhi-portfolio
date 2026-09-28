@@ -1,8 +1,14 @@
 "use client";
 
+import { memo } from "react";
 import Particles, { ParticlesProvider } from "@tsparticles/react";
 
 import { loadFull } from "tsparticles";
+
+const isSmallScreen =
+  typeof window !== "undefined" && window.matchMedia("(max-width: 767px)").matches;
+const hasFinePointer =
+  typeof window !== "undefined" && window.matchMedia("(pointer: fine)").matches;
 
 const particlesOptions = {
   fullScreen: { enable: false },
@@ -11,7 +17,7 @@ const particlesOptions = {
       value: "",
     },
   },
-  fpsLimit: 120,
+  fpsLimit: 60,
   interactivity: {
     events: {
       onClick: {
@@ -19,7 +25,7 @@ const particlesOptions = {
         mode: "push",
       },
       onHover: {
-        enable: true,
+        enable: hasFinePointer,
         mode: "repulse",
       },
       resize: true,
@@ -46,7 +52,8 @@ const particlesOptions = {
       width: 1,
     },
     collisions: {
-      enable: true,
+      // O(n²) per frame and barely visible — off for smoother scrolling
+      enable: false,
     },
     move: {
       direction: "none",
@@ -63,7 +70,7 @@ const particlesOptions = {
         enable: true,
         width: 800,
       },
-      value: 80,
+      value: isSmallScreen ? 40 : 80,
     },
     opacity: {
       value: 0.5,
@@ -85,7 +92,7 @@ const initParticles = async (engine) => {
   await loadFull(engine);
 };
 
-const ParticlesContainer = () => {
+const ParticlesContainer = memo(function ParticlesContainer() {
   return (
     <ParticlesProvider init={initParticles}>
       <Particles
@@ -95,6 +102,6 @@ const ParticlesContainer = () => {
       />
     </ParticlesProvider>
   );
-};
+});
 
 export default ParticlesContainer;

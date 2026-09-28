@@ -56,7 +56,14 @@ const Transition = () => {
         exit="exit"
         aria-hidden
       >
-        <img src="/full-logo.png" alt="Loading..." width={450} />
+        <img
+          src="/full-logo.webp"
+          alt=""
+          width={450}
+          height={450}
+          decoding="async"
+          className="w-[min(450px,80vw)] h-auto"
+        />
       </motion.div>
     </>
   );

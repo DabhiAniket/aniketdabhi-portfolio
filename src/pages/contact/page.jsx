@@ -4,6 +4,7 @@ import toast from "react-hot-toast";
 import { BsArrowRight } from "react-icons/bs";
 
 import { fadeIn } from "@/variants";
+import Decoration from "@/components/Decoration";
 import { personalData } from "@/data/portfolio";
 
 const ContactForm = () => {
@@ -131,7 +132,7 @@ const ContactForm = () => {
       </div>
       <button
         type="submit"
-        className="btn rounded-full border border-white/50 max-w-42.5 px-8 transition-all duration-300 flex items-center justify-center overflow-hidden hover:border-accent group disabled:pointer-events-none"
+        className="btn relative self-center sm:self-start w-fit min-w-42.5 whitespace-nowrap rounded-full border border-white/50 px-8 transition-colors duration-300 flex items-center justify-center overflow-hidden hover:border-accent group disabled:pointer-events-none"
       >
         <span className="group-hover:translate-y-[-120%] group-hover:opacity-0 transition-all duration-500">
           Send Message
@@ -147,9 +148,16 @@ const ContactForm = () => {
 
 const Contact = () => {
   return (
-    <div className="min-h-screen bg-primary/30 pb-28 xl:pb-0">
-      <div className="container mx-auto pt-44 pb-32 xl:py-32 text-center xl:text-left flex items-center justify-center h-full">
-        <div className="flex flex-col w-full max-w-175">
+    <div className="relative min-h-screen bg-primary/30 pb-24 xl:pb-0">
+      <Decoration
+        src="/rocket.webp"
+        width={520}
+        height={604}
+        delay="1s"
+        className="hidden lg:block lg:left-4 xl:left-[4%] lg:top-80 lg:w-[calc((100vw_-_700px)/2_-_40px)] lg:max-w-52"
+      />
+      <div className="relative z-10 container mx-auto pt-40 sm:pt-44 pb-12 lg:pt-36 xl:py-32 text-center xl:text-left flex items-center justify-center h-full">
+        <div className="relative flex flex-col w-full max-w-175">
           <motion.h2
             variants={fadeIn("up", 0.2)}
             initial="hidden"
@@ -168,6 +176,14 @@ const Contact = () => {
           >
             Have a website idea, a web application to build, or a development project in mind? Feel free to reach out. I'm always open to discussing interesting projects, freelance opportunities and new ideas.
           </motion.p>
+          {/* Phones & tablets: sits beside the Send button, in the free space */}
+          <Decoration
+            src="/rocket.webp"
+            width={520}
+            height={604}
+            delay="1s"
+            className="bottom-0 right-2 w-12 sm:w-14 lg:hidden"
+          />
           <ContactForm />
         </div>
       </div>

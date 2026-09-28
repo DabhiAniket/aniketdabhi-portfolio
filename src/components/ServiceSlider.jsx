@@ -12,13 +12,13 @@ const ServiceSlider = () => {
       {serviceData.map((item, i) => (
         <div
           key={i}
-          className="bg-[rgba(65,47,123,0.15)] h-max rounded-lg px-6 py-8 flex sm:flex-col gap-x-6 sm:gap-x-0 group cursor-pointer hover:bg-[rgba(89,65,169,0.15)] transition-all duration-300"
+          className="bg-[rgba(65,47,123,0.15)] h-max rounded-lg px-6 py-8 flex flex-col text-left group cursor-pointer hover:bg-[rgba(89,65,169,0.15)] hover:-translate-y-1 transition-[background-color,transform] duration-300"
         >
           <div className="text-4xl text-accent mb-4">{item.icon}</div>
 
           <div className="mb-8">
             <div className="mb-2 text-lg">{item.title}</div>
-            <p className="max-w-87.5 leading-normal">{item.description}</p>
+            <p className="md:max-w-87.5 leading-normal">{item.description}</p>
           </div>
 
           <div className="text-3xl">

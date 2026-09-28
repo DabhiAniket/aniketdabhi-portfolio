@@ -138,12 +138,12 @@ export const workData = {
       images: [
         {
           title: "Social Media Web Application",
-          path: "/thumb1.jpg",
+          path: "/thumb1.webp",
           link: "https://friend-zone-client-omega.vercel.app/",
         },
         {
           title: "Student Innovation – National Hackathon",
-          path: "/thumb2.jpg",
+          path: "/thumb2.webp",
           link: "#",
         },
       ],

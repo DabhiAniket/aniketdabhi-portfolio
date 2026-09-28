@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { personalData } from "@/data/portfolio";
 import {
   RiLinkedinLine,
@@ -32,12 +31,12 @@ export const socialData = [
 
 const Socials = () => {
   return (
-    <div className="flex items-center gap-x-5 text-lg">
+    <div className="flex items-center gap-x-6 sm:gap-x-5 text-lg">
       {socialData.map((social, i) => (
-        <Link
+        <a
           key={i}
           title={social.name}
-          to={social.link}
+          href={social.link}
           target="_blank"
           rel="noreferrer noopener"
           className={`${
@@ -48,7 +47,7 @@ const Socials = () => {
         >
           <social.Icon aria-hidden />
           <span className="sr-only">{social.name}</span>
-        </Link>
+        </a>
       ))}
     </div>
   );
