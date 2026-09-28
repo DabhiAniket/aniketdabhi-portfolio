@@ -158,7 +158,7 @@ const Contact = () => {
       />
       <div className="relative z-10 container mx-auto pt-40 sm:pt-44 pb-12 lg:pt-36 xl:py-32 text-center xl:text-left flex items-center justify-center h-full">
         <div className="relative flex flex-col w-full max-w-175">
-          <motion.h2
+          <motion.h1
             variants={fadeIn("up", 0.2)}
             initial="hidden"
             animate="show"
@@ -166,7 +166,7 @@ const Contact = () => {
             className="h2 text-center mb-8"
           >
             Let's Build Something <span className="text-accent">Together.</span>
-          </motion.h2>
+          </motion.h1>
           <motion.p
             variants={fadeIn("up", 0.3)}
             initial="hidden"

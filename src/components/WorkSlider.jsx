@@ -31,7 +31,7 @@ const WorkSlider = () => {
                 <div className="flex items-center justify-center relative overflow-hidden group">
                   <img
                     src={image.path}
-                    alt={image.title}
+                    alt={`${image.title} – project by Aniket Dabhi`}
                     width={800}
                     height={450}
                     loading="lazy"

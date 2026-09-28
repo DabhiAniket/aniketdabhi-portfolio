@@ -35,7 +35,7 @@ const About = () => {
 
       <div className="relative z-10 container mx-auto h-full flex flex-col items-center xl:flex-row gap-x-6">
         <div className="flex-1 flex flex-col justify-center">
-          <motion.h2
+          <motion.h1
             variants={fadeIn("right", 0.2)}
             initial="hidden"
             animate="show"
@@ -43,7 +43,7 @@ const About = () => {
             className="h2"
           >
             About <span className="text-accent">Me.</span>
-          </motion.h2>
+          </motion.h1>
           <motion.p
             variants={fadeIn("right", 0.4)}
             initial="hidden"

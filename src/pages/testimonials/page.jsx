@@ -26,7 +26,7 @@ const Testimonials = () => {
             delay="1.5s"
             className="hidden sm:block top-1/2 -translate-y-1/2 right-[4%] w-20 md:w-24 lg:w-28 xl:w-32"
           />
-          <motion.h2
+          <motion.h1
             variants={fadeIn("up", 0.2)}
             initial="hidden"
             animate="show"
@@ -34,7 +34,7 @@ const Testimonials = () => {
             className="h2 text-[24px] md:text-[36px] mt-0 mb-4 xl:mt-0 xl:mb-4 relative z-20"
           >
             My Personal <span className="text-accent">Approach.</span>
-          </motion.h2>
+          </motion.h1>
         </div>
 
         <motion.div

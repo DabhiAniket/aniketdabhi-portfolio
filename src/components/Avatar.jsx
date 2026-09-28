@@ -5,7 +5,7 @@ const Avatar = ({ className = "hidden xl:flex xl:max-w-none", priority = false }
         src="/myavatar.webp"
         srcSet="/myavatar-640.webp 640w, /myavatar.webp 1254w"
         sizes="(min-width: 1200px) 737px, (min-width: 640px) 420px, 320px"
-        alt="Aniket Dabhi"
+        alt="Aniket Dabhi – Full-Stack Software Developer"
         width={737}
         height={737}
         decoding="async"

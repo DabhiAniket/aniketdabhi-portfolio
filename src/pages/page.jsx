@@ -38,7 +38,7 @@ const Home = () => {
             exit="hidden"
             className="max-w-sm sm:max-w-lg xl:max-w-xl mx-auto xl:mx-0 mb-10 xl:mb-16"
           >
-            I'm a Full-Stack Software Developer who enjoys turning ideas into reliable, scalable web applications. I work across React.js, Node.js, Laravel, Python FastAPI and modern databases, with a strong focus on clean UI, solid backend architecture and production-ready solutions.
+            I'm Aniket Dabhi, a Full-Stack Software Developer who enjoys turning ideas into reliable, scalable web applications. I work across React.js, Node.js, Laravel, Python FastAPI and modern databases, with a strong focus on clean UI, solid backend architecture and production-ready solutions.
           </motion.p>
 
           <div className="flex justify-center xl:hidden relative">

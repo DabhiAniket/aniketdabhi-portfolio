@@ -1,10 +1,11 @@
 import { Suspense, lazy, useEffect } from "react";
-import { Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 import { AnimatePresence, MotionConfig, motion } from "framer-motion";
 import { Toaster } from "react-hot-toast";
 
 import Header from "@/components/Header";
 import Nav from "@/components/Nav";
+import Seo from "@/components/Seo";
 import TopLeftImg from "@/components/TopLeftImg";
 import Transition from "@/components/Transition";
 
@@ -43,6 +44,7 @@ function App() {
   return (
     <MotionConfig reducedMotion="user">
       <div className="page bg-site text-white bg-cover bg-no-repeat relative font-sora">
+        <Seo />
         <TopLeftImg />
         <Nav />
         <Header />
@@ -57,7 +59,7 @@ function App() {
         )}
 
         <AnimatePresence mode="wait">
-          <motion.div key={location.pathname}>
+          <motion.main key={location.pathname} id="main-content">
             <Transition />
             <Suspense fallback={<div className="min-h-screen" />}>
               <Routes location={location} key={location.pathname}>
@@ -67,9 +69,11 @@ function App() {
                 <Route path="/work" element={<Work />} />
                 <Route path="/testimonials" element={<Testimonials />} />
                 <Route path="/contact" element={<Contact />} />
+                {/* Unknown URLs: the host returns 404.html (noindex); send visitors home */}
+                <Route path="*" element={<Navigate to="/" replace />} />
               </Routes>
             </Suspense>
-          </motion.div>
+          </motion.main>
         </AnimatePresence>
 
         <Toaster

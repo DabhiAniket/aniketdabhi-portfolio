@@ -38,7 +38,7 @@ const Socials = () => {
           title={social.name}
           href={social.link}
           target="_blank"
-          rel="noreferrer noopener"
+          rel={social.name === "Github" || social.name === "LinkedIn" ? "me noopener noreferrer" : "noopener noreferrer"}
           className={`${
             social.name === "Github"
               ? "bg-accent rounded-full p-1.25 hover:text-white"
