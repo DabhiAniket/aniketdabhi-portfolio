@@ -1,13 +1,10 @@
 "use client";
 
-import { Suspense, lazy } from "react";
 import { motion } from "framer-motion";
 
 import ProjectsBtn from "@/components/ProjectsBtn";
 import Avatar from "@/components/Avatar";
 import { fadeIn } from "@/variants";
-
-const ParticlesContainer = lazy(() => import("@/components/ParticlesContainer"));
 
 const Home = () => {
   return (
@@ -76,17 +73,13 @@ const Home = () => {
           aria-hidden
         />
 
-        <Suspense fallback={null}>
-          <ParticlesContainer />
-        </Suspense>
-
         <motion.div
           variants={fadeIn("up", 0.5)}
           initial="hidden"
           animate="show"
           exit="hidden"
           transition={{ duration: 1, ease: "easeInOut" }}
-          className="w-full h-full max-w-184.25 max-h-169.5 absolute -bottom-32 lg:bottom-0 lg:right-[8%]"
+          className="w-full h-full max-w-184.25 max-h-169.5 absolute z-2 -bottom-32 lg:bottom-0 lg:right-[8%]"
         >
           <Avatar priority />
         </motion.div>

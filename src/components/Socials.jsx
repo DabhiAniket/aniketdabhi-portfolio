@@ -43,7 +43,7 @@ const Socials = () => {
             social.name === "Github"
               ? "bg-accent rounded-full p-1.25 hover:text-white"
               : "hover:text-accent"
-          } transition-all duration-300`}
+          } inline-flex hover:-translate-y-0.5 transition-all duration-300`}
         >
           <social.Icon aria-hidden />
           <span className="sr-only">{social.name}</span>

@@ -84,7 +84,7 @@ export const ROUTES = [
     pageType: "CollectionPage",
     title: "Aniket Dabhi Portfolio | Projects & Work",
     description:
-      "Explore projects by Aniket Dabhi, including a social media web app and a national hackathon project – full-stack apps, REST APIs and modern frontend work.",
+      "Explore projects by Aniket Dabhi, including the Mahadev Facility Management website, a social media web app and a national hackathon project – full-stack apps, REST APIs and modern frontend work.",
   },
   {
     path: "/testimonials",

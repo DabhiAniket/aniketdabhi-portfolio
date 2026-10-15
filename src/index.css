@@ -87,6 +87,31 @@
   }
 }
 
+/* Card highlight that follows the cursor (position set by trackSpotlight) */
+.spotlight {
+  isolation: isolate;
+}
+.spotlight::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: inherit;
+  background: radial-gradient(
+    280px circle at var(--mx, 50%) var(--my, 50%),
+    rgba(241, 48, 36, 0.16),
+    transparent 65%
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+@media (hover: hover) {
+  .spotlight:hover::after {
+    opacity: 1;
+  }
+}
+
 /* Space for the fixed bottom nav (mobile/tablet) incl. the iOS home indicator */
 .nav-safe {
   padding-bottom: env(safe-area-inset-bottom);

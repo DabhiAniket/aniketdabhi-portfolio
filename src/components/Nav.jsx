@@ -41,7 +41,7 @@ const Nav = () => {
           <Link
             className={`${
               link.path === pathname ? "text-accent" : ""
-            } relative flex items-center justify-center group hover:text-accent transition-colors duration-300 p-2 xl:p-0 -m-2 xl:m-0`}
+            } relative flex items-center justify-center group hover:text-accent active:scale-90 transition-[color,transform] duration-300 p-2 xl:p-0 -m-2 xl:m-0`}
             to={link.path}
             key={i}
             aria-current={link.path === pathname ? "page" : undefined}
@@ -62,7 +62,7 @@ const Nav = () => {
               </div>
             </div>
 
-            <div>
+            <div className="transition-transform duration-300 group-hover:-translate-y-0.5 xl:group-hover:translate-y-0 xl:group-hover:scale-115">
               <link.Icon aria-hidden />
             </div>
             <span className="sr-only">{link.label}</span>

@@ -1,7 +1,11 @@
+import { motion } from "framer-motion";
+
+import { useParallax } from "@/lib/motion";
 
 const Circles = () => {
+  const parallax = useParallax(-20);
   return (
-    <div className="w-50 xl:w-75 absolute -right-16 -bottom-2 mix-blend-color-dodge animate-pulse duration-75 z-10 pointer-events-none select-none">
+    <motion.div style={parallax} className="w-50 xl:w-75 absolute -right-16 -bottom-2 mix-blend-color-dodge animate-pulse duration-75 z-10 pointer-events-none select-none">
       <img
         src="/circles.webp"
         loading="lazy"
@@ -11,7 +15,7 @@ const Circles = () => {
         height={200}
         className="w-full h-full"
       />
-    </div>
+    </motion.div>
   );
 };
 

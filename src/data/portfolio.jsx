@@ -133,20 +133,21 @@ export const aboutData = [
 ];
 
 export const workData = {
-  slides: [
+  projects: [
     {
-      images: [
-        {
-          title: "Social Media Web Application",
-          path: "/thumb1.webp",
-          link: "https://friend-zone-client-omega.vercel.app/",
-        },
-        {
-          title: "Student Innovation – National Hackathon",
-          path: "/thumb2.webp",
-          link: "#",
-        },
-      ],
+      title: "Mahadev Facility Management Website",
+      path: "/thumb3.webp",
+      link: "https://mahadevfacilitymanagement.vercel.app/",
+    },
+    {
+      title: "Social Media Web Application",
+      path: "/thumb1.webp",
+      link: "https://friend-zone-client-omega.vercel.app/",
+    },
+    {
+      title: "Student Innovation – National Hackathon",
+      path: "/thumb2.webp",
+      link: "#",
     },
   ],
 };

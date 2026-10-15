@@ -76,7 +76,8 @@ const About = () => {
           <motion.div
             variants={fadeIn("right", 0.6)}
             initial="hidden"
-            animate="show"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.3 }}
             className="flex w-full max-w-sm md:max-w-xl xl:max-w-none mx-auto xl:mx-0 mb-8"
           >
             <div className="grid grid-cols-2 gap-y-6 md:flex flex-1 xl:gap-x-6">
@@ -122,7 +123,8 @@ const About = () => {
         <motion.div
           variants={fadeIn("left", 0.4)}
           initial="hidden"
-          animate="show"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.2 }}
           exit="hidden"
           className="flex flex-col w-full xl:max-w-[48%] min-h-40 xl:h-120 mt-8 xl:mt-0"
         >

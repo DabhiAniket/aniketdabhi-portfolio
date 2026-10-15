@@ -26,6 +26,7 @@ const Work = lazy(pageImports.work);
 const Testimonials = lazy(pageImports.testimonials);
 const Contact = lazy(pageImports.contact);
 const ParticlesContainer = lazy(() => import("@/components/ParticlesContainer"));
+const FluidLines = lazy(() => import("@/components/FluidLines"));
 
 function App() {
   const location = useLocation();
@@ -49,14 +50,19 @@ function App() {
         <Nav />
         <Header />
 
-        {/* Global Background Animation for other pages */}
-        {location.pathname !== "/" && (
-          <div className="fixed inset-0 pointer-events-none z-0 mix-blend-screen">
-            <Suspense fallback={null}>
-              <ParticlesContainer />
-            </Suspense>
-          </div>
-        )}
+        {/* Interactive node background: mounted once for every route so it never restarts on navigation.
+            z-[1] keeps it above page backgrounds but below content (z-10); it never takes pointer events. */}
+        <div className="fixed inset-0 pointer-events-none z-1 mix-blend-screen" aria-hidden>
+          <Suspense fallback={null}>
+            <ParticlesContainer />
+          </Suspense>
+        </div>
+        {/* Glowing accent-red trails that follow the mouse/finger; its own layer above the nodes, still below content. */}
+        <div className="fixed inset-0 pointer-events-none z-1 mix-blend-screen" aria-hidden>
+          <Suspense fallback={null}>
+            <FluidLines />
+          </Suspense>
+        </div>
 
         <AnimatePresence mode="wait">
           <motion.main key={location.pathname} id="main-content">

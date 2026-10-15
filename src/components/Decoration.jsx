@@ -1,4 +1,7 @@
 import { memo } from "react";
+import { motion } from "framer-motion";
+
+import { useParallax } from "@/lib/motion";
 
 // Decorative glowing image in the same style as <Bulb />.
 // Sits behind page content (content wrappers use `relative z-10`), never receives pointer events.
@@ -8,11 +11,13 @@ const Decoration = memo(function Decoration({
   height,
   className = "",
   delay = "0s",
+  depth = -14,
 }) {
+  const parallax = useParallax(depth);
   return (
-    <div
+    <motion.div
       className={`absolute mix-blend-color-dodge animate-pulse pointer-events-none select-none ${className}`}
-      style={{ animationDelay: delay }}
+      style={{ animationDelay: delay, ...parallax }}
       aria-hidden
     >
       <img
@@ -24,7 +29,7 @@ const Decoration = memo(function Decoration({
         decoding="async"
         className="w-full h-auto"
       />
-    </div>
+    </motion.div>
   );
 });
 
