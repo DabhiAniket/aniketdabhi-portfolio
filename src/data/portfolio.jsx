@@ -135,6 +135,20 @@ export const aboutData = [
 export const workData = {
   projects: [
     {
+      title: "Perfume Website",
+      path: "/thumb4.webp",
+      link: "https://perfume-pi-five.vercel.app/",
+      description:
+        "Luxury fragrance brand website for PRIME PERFUME, with an editorial hero, signature collection showcase and fragrance-note storytelling.",
+    },
+    {
+      title: "Real Estate Website",
+      path: "/thumb5.webp",
+      link: "https://demo-real-estate-indol.vercel.app/",
+      description:
+        "Real estate website for architect-designed homes, with an interactive 3D villa walkthrough and residential, commercial and land listings.",
+    },
+    {
       title: "Mahadev Facility Management Website",
       path: "/thumb3.webp",
       link: "https://mahadevfacilitymanagement.vercel.app/",
