@@ -10,7 +10,7 @@ const Bulb = () => {
         src="/bulb.webp"
         loading="lazy"
         decoding="async"
-        alt="bulb"
+        alt=""
         width={260}
         height={200}
         className="w-full h-full"

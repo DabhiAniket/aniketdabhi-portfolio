@@ -1,6 +1,8 @@
 // Single source of truth for SEO. Used at build time (vite.config.js → per-route HTML,
 // sitemap.xml, robots.txt) and at runtime (<Seo /> updates tags on client navigation).
-// Plain JS with no imports so Node can load it directly.
+// Plain JS (only plain-JS imports) so Node can load it directly.
+
+import { projects } from "../data/projects.js";
 
 export const SITE_URL = "https://aniketdabhi-portfolio.vercel.app";
 export const SITE_NAME = "Aniket Dabhi";
@@ -84,7 +86,7 @@ export const ROUTES = [
     pageType: "CollectionPage",
     title: "Aniket Dabhi Portfolio | Projects & Work",
     description:
-      "Explore projects by Aniket Dabhi, including a luxury perfume website, a 3D real estate website, the Mahadev Facility Management website and a social media web app – full-stack and modern frontend work.",
+      "Projects by Aniket Dabhi: a luxury perfume website, a 3D real estate website, the Mahadev Facility Management website, a social media web app and more.",
   },
   {
     path: "/testimonials",
@@ -130,6 +132,25 @@ export const buildJsonLd = (route) => {
   };
   if (route.pageType === "ProfilePage") page.mainEntity = { "@id": personId };
   else page.about = { "@id": personId };
+
+  // /work: list every project so search engines can connect them to Aniket Dabhi.
+  if (route.path === "/work") {
+    page.mainEntity = {
+      "@type": "ItemList",
+      numberOfItems: projects.length,
+      itemListElement: projects.map((project, i) => {
+        const work = {
+          "@type": "CreativeWork",
+          name: project.title,
+          image: `${SITE_URL}${project.path}`,
+          creator: { "@id": personId },
+        };
+        if (project.description) work.description = project.description;
+        if (project.link && project.link !== "#") work.url = project.link;
+        return { "@type": "ListItem", position: i + 1, item: work };
+      }),
+    };
+  }
 
   return {
     "@context": "https://schema.org",

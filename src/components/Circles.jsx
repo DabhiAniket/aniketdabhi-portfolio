@@ -10,7 +10,7 @@ const Circles = () => {
         src="/circles.webp"
         loading="lazy"
         decoding="async"
-        alt="circles"
+        alt=""
         width={260}
         height={200}
         className="w-full h-full"

@@ -46,6 +46,8 @@ const headTags = (route, { noindex = false } = {}) => {
     `<meta property="og:description" content="${esc(route.description)}" />`,
     `<meta property="og:url" content="${url}" />`,
     `<meta property="og:image" content="${image}" />`,
+    `<meta property="og:image:secure_url" content="${image}" />`,
+    `<meta property="og:image:type" content="image/jpeg" />`,
     `<meta property="og:image:width" content="${OG_IMAGE.width}" />`,
     `<meta property="og:image:height" content="${OG_IMAGE.height}" />`,
     `<meta property="og:image:alt" content="${esc(OG_IMAGE.alt)}" />`,
@@ -54,6 +56,14 @@ const headTags = (route, { noindex = false } = {}) => {
     `<meta name="twitter:description" content="${esc(route.description)}" />`,
     `<meta name="twitter:image" content="${image}" />`,
     `<meta name="twitter:image:alt" content="${esc(OG_IMAGE.alt)}" />`,
+    // Search engine ownership verification, only when a real token is provided at build
+    // time (e.g. Vercel → Settings → Environment Variables). Nothing is emitted otherwise.
+    process.env.GOOGLE_SITE_VERIFICATION
+      ? `<meta name="google-site-verification" content="${esc(process.env.GOOGLE_SITE_VERIFICATION)}" />`
+      : "",
+    process.env.BING_SITE_VERIFICATION
+      ? `<meta name="msvalidate.01" content="${esc(process.env.BING_SITE_VERIFICATION)}" />`
+      : "",
     // Home LCP element on desktop is the avatar – let the browser fetch it early.
     isHome
       ? `<link rel="preload" as="image" type="image/webp" href="/myavatar.webp" imagesrcset="/myavatar-640.webp 640w, /myavatar.webp 1254w" imagesizes="(min-width: 1200px) 737px, (min-width: 640px) 420px, 320px" fetchpriority="high" />`

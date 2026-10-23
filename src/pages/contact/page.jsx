@@ -84,6 +84,7 @@ const ContactForm = () => {
           <input
             type="text"
             name="name"
+            aria-label="Your name"
             placeholder="Name"
             className="input"
             value={form.name}
@@ -96,6 +97,7 @@ const ContactForm = () => {
           <input
             type="email"
             name="email"
+            aria-label="Your email"
             placeholder="E-mail"
             className="input"
             value={form.email}
@@ -109,6 +111,7 @@ const ContactForm = () => {
         <input
           type="text"
           name="subject"
+          aria-label="Subject"
           placeholder="Subject"
           className="input"
           value={form.subject}
@@ -121,6 +124,7 @@ const ContactForm = () => {
         <textarea
           ref={messageRef}
           name="message"
+          aria-label="Your message"
           placeholder="Message..."
           className="textarea"
           rows={4}

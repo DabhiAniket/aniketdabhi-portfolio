@@ -57,11 +57,13 @@ const Transition = () => {
         aria-hidden
       >
         <img
-          src="/full-logo.webp"
+          src="/full-logo-450.webp"
+          srcSet="/full-logo-450.webp 450w, /full-logo.webp 900w"
+          sizes="min(450px, 80vw)"
           alt=""
           width={450}
           height={450}
-          decoding="async"
+          fetchPriority="high"
           className="w-[min(450px,80vw)] h-auto"
         />
       </motion.div>

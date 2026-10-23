@@ -11,10 +11,11 @@
   <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
   <link rel="manifest" href="/site.webmanifest" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap" />
+  <!-- Sora is self-hosted (public/fonts, @font-face in src/index.css): no render-blocking third-party CSS -->
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/sora-latin-v17.woff2" crossorigin />
   <link rel="preload" as="image" href="/logo.webp" />
+  <!-- Page-transition splash logo: the largest element on first paint of every page -->
+  <link rel="preload" as="image" type="image/webp" href="/full-logo-450.webp" imagesrcset="/full-logo-450.webp 450w, /full-logo.webp 900w" imagesizes="min(450px, 80vw)" fetchpriority="high" />
 </head>
 
 <body>

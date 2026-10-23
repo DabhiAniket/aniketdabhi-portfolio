@@ -18,6 +18,8 @@ import {
   SiFastapi,
 } from "react-icons/si";
 
+import { projects } from "./projects.js";
+
 export const personalData = {
   name: "Aniket Dabhi",
   role: "Full-Stack Software Developer",
@@ -132,39 +134,7 @@ export const aboutData = [
   },
 ];
 
-export const workData = {
-  projects: [
-    {
-      title: "Perfume Website",
-      path: "/thumb4.webp",
-      link: "https://perfume-pi-five.vercel.app/",
-      description:
-        "Luxury fragrance brand website for PRIME PERFUME, with an editorial hero, signature collection showcase and fragrance-note storytelling.",
-    },
-    {
-      title: "Real Estate Website",
-      path: "/thumb5.webp",
-      link: "https://demo-real-estate-indol.vercel.app/",
-      description:
-        "Real estate website for architect-designed homes, with an interactive 3D villa walkthrough and residential, commercial and land listings.",
-    },
-    {
-      title: "Mahadev Facility Management Website",
-      path: "/thumb3.webp",
-      link: "https://mahadevfacilitymanagement.vercel.app/",
-    },
-    {
-      title: "Social Media Web Application",
-      path: "/thumb1.webp",
-      link: "https://friend-zone-client-omega.vercel.app/",
-    },
-    {
-      title: "Student Innovation – National Hackathon",
-      path: "/thumb2.webp",
-      link: "#",
-    },
-  ],
-};
+export const workData = { projects };
 
 import {
   RxCrop,
