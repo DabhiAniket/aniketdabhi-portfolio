@@ -1,6 +1,6 @@
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { useLayoutEffect, useRef, useState } from "react";
-import toast from "react-hot-toast";
+import toast, { Toaster } from "react-hot-toast";
 import { BsArrowRight } from "react-icons/bs";
 
 import { fadeIn } from "@/variants";
@@ -69,7 +69,7 @@ const ContactForm = () => {
   };
 
   return (
-    <motion.form
+    <m.form
       variants={fadeIn("up", 0.4)}
       initial="hidden"
       animate="show"
@@ -146,13 +146,24 @@ const ContactForm = () => {
           aria-hidden
         />
       </button>
-    </motion.form>
+    </m.form>
   );
 };
 
 const Contact = () => {
   return (
     <div className="relative min-h-screen bg-primary/30 pb-24 xl:pb-0">
+      {/* Only this page shows toasts, so the toast library loads with it, not on every page. */}
+      <Toaster
+        position="top-center"
+        toastOptions={{
+          style: {
+            background: "#393a47",
+            color: "#fff",
+            border: "1px solid rgba(255, 255, 255, 0.2)",
+          },
+        }}
+      />
       <Decoration
         src="/rocket.webp"
         width={520}
@@ -162,7 +173,7 @@ const Contact = () => {
       />
       <div className="relative z-10 container mx-auto pt-40 sm:pt-44 pb-12 lg:pt-36 xl:py-32 text-center xl:text-left flex items-center justify-center h-full">
         <div className="relative flex flex-col w-full max-w-175">
-          <motion.h1
+          <m.h1
             variants={fadeIn("up", 0.2)}
             initial="hidden"
             animate="show"
@@ -170,8 +181,8 @@ const Contact = () => {
             className="h2 text-center mb-8"
           >
             Let's Build Something <span className="text-accent">Together.</span>
-          </motion.h1>
-          <motion.p
+          </m.h1>
+          <m.p
             variants={fadeIn("up", 0.3)}
             initial="hidden"
             animate="show"
@@ -179,7 +190,7 @@ const Contact = () => {
             className="text-center mb-12 text-white/60"
           >
             Have a website idea, a web application to build, or a development project in mind? Feel free to reach out. I'm always open to discussing interesting projects, freelance opportunities and new ideas.
-          </motion.p>
+          </m.p>
           {/* Phones & tablets: sits beside the Send button, in the free space */}
           <Decoration
             src="/rocket.webp"

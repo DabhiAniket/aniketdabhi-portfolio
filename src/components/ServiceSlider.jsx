@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import {
   RxArrowTopRight,
 } from "react-icons/rx";
@@ -12,7 +12,7 @@ const ServiceSlider = () => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
       {serviceData.map((item, i) => (
-        <motion.div
+        <m.div
           key={i}
           {...reveal(0.1 + (i % 2) * 0.1)}
           onPointerMove={trackSpotlight}
@@ -31,7 +31,7 @@ const ServiceSlider = () => {
               aria-hidden
             />
           </div>
-        </motion.div>
+        </m.div>
       ))}
     </div>
   );

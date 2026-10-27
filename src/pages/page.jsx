@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 import ProjectsBtn from "@/components/ProjectsBtn";
 import Avatar from "@/components/Avatar";
@@ -17,7 +17,7 @@ const Home = () => {
       />
       <div className="w-full h-full bg-linear-to-r from-primary/10 via-black/30 to-black/10 min-h-screen flex flex-col justify-center">
         <div className="relative z-10 text-center flex flex-col justify-center xl:text-left container mx-auto pt-40 sm:pt-44 pb-20 lg:pt-32 xl:pt-0 xl:pb-0">
-          <motion.h1
+          <m.h1
             variants={fadeIn("down", 0.2)}
             initial="hidden"
             animate="show"
@@ -26,9 +26,9 @@ const Home = () => {
           >
             Building Digital Experiences <br /> That{" "}
             <span className="text-accent">Actually Work</span>
-          </motion.h1>
+          </m.h1>
 
-          <motion.p
+          <m.p
             variants={fadeIn("down", 0.3)}
             initial="hidden"
             animate="show"
@@ -36,12 +36,12 @@ const Home = () => {
             className="max-w-sm sm:max-w-lg xl:max-w-xl mx-auto xl:mx-0 mb-10 xl:mb-16"
           >
             I'm Aniket Dabhi, a Full-Stack Software Developer who enjoys turning ideas into reliable, scalable web applications. I work across React.js, Node.js, Laravel, Python FastAPI and modern databases, with a strong focus on clean UI, solid backend architecture and production-ready solutions.
-          </motion.p>
+          </m.p>
 
           <div className="flex justify-center xl:hidden relative">
             <ProjectsBtn />
           </div>
-          <motion.div
+          <m.div
             variants={fadeIn("down", 0.4)}
             initial="hidden"
             animate="show"
@@ -49,10 +49,10 @@ const Home = () => {
             className="hidden xl:flex"
           >
             <ProjectsBtn />
-          </motion.div>
+          </m.div>
 
           {/* Avatar for phones & tablets (desktop uses the large one on the right) */}
-          <motion.div
+          <m.div
             variants={fadeIn("up", 0.4)}
             initial="hidden"
             animate="show"
@@ -63,7 +63,7 @@ const Home = () => {
               priority
               className="relative flex mask-[linear-gradient(to_bottom,black_65%,transparent_98%)]"
             />
-          </motion.div>
+          </m.div>
         </div>
       </div>
       <div className="w-7xl h-full absolute right-0 bottom-0 pointer-events-none">
@@ -73,7 +73,7 @@ const Home = () => {
           aria-hidden
         />
 
-        <motion.div
+        <m.div
           variants={fadeIn("up", 0.5)}
           initial="hidden"
           animate="show"
@@ -82,7 +82,7 @@ const Home = () => {
           className="w-full h-full max-w-184.25 max-h-169.5 absolute z-2 -bottom-32 lg:bottom-0 lg:right-[8%]"
         >
           <Avatar priority />
-        </motion.div>
+        </m.div>
       </div>
     </div>
   );

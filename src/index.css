@@ -130,15 +130,6 @@
   }
 }
 
-/* Space for the fixed bottom nav (mobile/tablet) incl. the iOS home indicator */
-/* Only below xl (bottom bar). On desktop this unlayered rule would override the
-   side pill's xl:py-8 and leave the last icon touching the pill's bottom edge. */
-@media (max-width: 1199.98px) {
-  .nav-safe {
-    padding-bottom: env(safe-area-inset-bottom);
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

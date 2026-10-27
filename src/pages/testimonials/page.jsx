@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 import TestimonialSlider from "@/components/TestimonialSlider";
 import Decoration from "@/components/Decoration";
@@ -26,7 +26,7 @@ const Testimonials = () => {
             delay="1.5s"
             className="hidden sm:block top-1/2 -translate-y-1/2 right-[4%] w-20 md:w-24 lg:w-28 xl:w-32"
           />
-          <motion.h1
+          <m.h1
             variants={fadeIn("up", 0.2)}
             initial="hidden"
             animate="show"
@@ -34,17 +34,21 @@ const Testimonials = () => {
             className="h2 text-[24px] md:text-[36px] mt-0 mb-4 xl:mt-0 xl:mb-4 relative z-20"
           >
             My Personal <span className="text-accent">Approach.</span>
-          </motion.h1>
+          </m.h1>
         </div>
 
-        <motion.div
+        {/* Desktop: the fixed side nav (98vw - 64px, plus its ball popping ~40px to the left) can
+            overlap the container's right edge and hide the slider's right arrow. Inset the slider
+            on both sides, only by the overlap, so it stays centred and clear of the nav. */}
+        <m.div
           variants={fadeIn("up", 0.4)}
           initial="hidden"
           animate="show"
           exit="hidden"
+          className="xl:px-[max(0px,calc(50%-48vw+104px))]"
         >
           <TestimonialSlider />
-        </motion.div>
+        </m.div>
       </div>
     </div>
   );

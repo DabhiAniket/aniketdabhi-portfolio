@@ -1,5 +1,5 @@
 import { memo } from "react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 import { useParallax } from "@/lib/motion";
 
@@ -15,13 +15,16 @@ const Decoration = memo(function Decoration({
 }) {
   const parallax = useParallax(depth);
   return (
-    <motion.div
+    <m.div
       className={`absolute mix-blend-color-dodge animate-pulse pointer-events-none select-none ${className}`}
       style={{ animationDelay: delay, ...parallax }}
       aria-hidden
     >
       <img
         src={src}
+        // The 520px artwork also ships as `name-240.webp`; phones show it at ~56px wide.
+        srcSet={width >= 500 ? `${src.replace(/\.webp$/, "-240.webp")} 240w, ${src} ${width}w` : undefined}
+        sizes={width >= 500 ? "(min-width: 1024px) 240px, (min-width: 640px) 128px, 56px" : undefined}
         alt=""
         width={width}
         height={height}
@@ -29,7 +32,7 @@ const Decoration = memo(function Decoration({
         decoding="async"
         className="w-full h-auto"
       />
-    </motion.div>
+    </m.div>
   );
 });
 

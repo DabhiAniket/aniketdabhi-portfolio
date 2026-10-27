@@ -86,7 +86,7 @@ export const ROUTES = [
     pageType: "CollectionPage",
     title: "Aniket Dabhi Portfolio | Projects & Work",
     description:
-      "Projects by Aniket Dabhi: a luxury perfume website, a 3D real estate website, the Mahadev Facility Management website, a social media web app and more.",
+      "Projects by Aniket Dabhi: a pottery e-commerce store, a luxury perfume website, a 3D real estate website, a facility management website and a social media app.",
   },
   {
     path: "/testimonials",

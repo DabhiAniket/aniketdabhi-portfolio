@@ -1,4 +1,4 @@
-import { personalData } from "@/data/portfolio";
+import { personalData } from "@/data/personal";
 import {
   RiLinkedinLine,
   RiGithubLine,

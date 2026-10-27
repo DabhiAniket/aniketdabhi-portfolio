@@ -1,8 +1,15 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useLayoutEffect } from "react";
+import { m } from "framer-motion";
 
 const Transition = () => {
+  // Hand over from the static splash in index.html: removed before this overlay's first paint,
+  // so the logo never blinks.
+  useLayoutEffect(() => {
+    document.getElementById("boot-splash")?.remove();
+  }, []);
+
   const sweepVariants = {
     initial: {
       x: "0%",
@@ -34,7 +41,7 @@ const Transition = () => {
   return (
     <>
       {/* Cinematic Dark Sweep */}
-      <motion.div
+      <m.div
         className="fixed top-0 bottom-0 left-0 w-screen h-screen z-30 shadow-[10px_0_50px_rgba(241,48,36,0.1)]"
         style={{
           background:
@@ -48,7 +55,7 @@ const Transition = () => {
       />
 
       {/* Centered Logo */}
-      <motion.div
+      <m.div
         className="fixed inset-0 z-40 flex items-center justify-center pointer-events-none"
         variants={logoVariants}
         initial="initial"
@@ -58,7 +65,7 @@ const Transition = () => {
       >
         <img
           src="/full-logo-450.webp"
-          srcSet="/full-logo-450.webp 450w, /full-logo.webp 900w"
+          srcSet="/full-logo-450.webp 450w, /full-logo-640.webp 640w, /full-logo.webp 900w"
           sizes="min(450px, 80vw)"
           alt=""
           width={450}
@@ -66,7 +73,7 @@ const Transition = () => {
           fetchPriority="high"
           className="w-[min(450px,80vw)] h-auto"
         />
-      </motion.div>
+      </m.div>
     </>
   );
 };

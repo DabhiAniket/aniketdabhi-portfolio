@@ -15,10 +15,18 @@
   <link rel="preload" as="font" type="font/woff2" href="/fonts/sora-latin-v17.woff2" crossorigin />
   <link rel="preload" as="image" href="/logo.webp" />
   <!-- Page-transition splash logo: the largest element on first paint of every page -->
-  <link rel="preload" as="image" type="image/webp" href="/full-logo-450.webp" imagesrcset="/full-logo-450.webp 450w, /full-logo.webp 900w" imagesizes="min(450px, 80vw)" fetchpriority="high" />
+  <link rel="preload" as="image" type="image/webp" href="/full-logo-450.webp" imagesrcset="/full-logo-450.webp 450w, /full-logo-640.webp 640w, /full-logo.webp 900w" imagesizes="min(450px, 80vw)" fetchpriority="high" />
+  <!-- Without JavaScript the splash would never be removed, so hide it and show the noscript content. -->
+  <noscript><style>#boot-splash{display:none}</style></noscript>
 </head>
 
 <body>
+  <!-- Same look as the first frame of the page transition (src/components/Transition.jsx), but painted
+       straight from the HTML so the logo shows before the JavaScript loads. React removes it once its own
+       identical overlay is on screen. -->
+  <div id="boot-splash" aria-hidden="true" style="position:fixed;inset:0;z-index:40;display:flex;align-items:center;justify-content:center;background:linear-gradient(90deg,#05020a 0%,#11072b 75%,rgba(241,48,36,0.25) 100%)">
+    <img src="/full-logo-450.webp" srcset="/full-logo-450.webp 450w, /full-logo-640.webp 640w, /full-logo.webp 900w" sizes="min(450px, 80vw)" alt="" width="450" height="450" fetchpriority="high" style="width:min(450px,80vw);height:auto" />
+  </div>
   <div id="root"></div>
   <noscript>
     <main style="max-width:720px;margin:0 auto;padding:48px 16px;color:#fff;font-family:sans-serif;line-height:1.7">

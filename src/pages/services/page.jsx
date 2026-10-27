@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 import Bulb from "@/components/Bulb";
 import Circles from "@/components/Circles";
@@ -22,7 +22,7 @@ const Services = () => {
       <div className="relative z-10 container mx-auto">
         <div className="flex flex-col xl:flex-row gap-x-8">
           <div className="text-center flex xl:w-[30vw] flex-col lg:text-left mb-4 xl:mb-0">
-            <motion.h1
+            <m.h1
               variants={fadeIn("up", 0.2)}
               initial="hidden"
               animate="show"
@@ -30,8 +30,8 @@ const Services = () => {
               className="h2 xl:mt-8"
             >
               My services <span className="text-accent">.</span>
-            </motion.h1>
-            <motion.p
+            </m.h1>
+            <m.p
               variants={fadeIn("up", 0.4)}
               initial="hidden"
               animate="show"
@@ -39,10 +39,10 @@ const Services = () => {
               className="mb-4 max-w-[400px] mx-auto lg:mx-0"
             >
               I specialize in creating complete, high-performance web applications from the ground up. Whether it's designing beautiful, interactive user interfaces or architecting secure, scalable backend systems, I approach every project with a focus on writing clean, maintainable code. My goal is to deliver robust digital solutions that not only look great but solve real-world problems efficiently and reliably for your users.
-            </motion.p>
+            </m.p>
           </div>
 
-          <motion.div
+          <m.div
             variants={fadeIn("down", 0.6)}
             initial="hidden"
             animate="show"
@@ -50,7 +50,7 @@ const Services = () => {
             className="w-full xl:max-w-[65%]"
           >
             <ServiceSlider />
-          </motion.div>
+          </m.div>
         </div>
       </div>
       <Bulb />

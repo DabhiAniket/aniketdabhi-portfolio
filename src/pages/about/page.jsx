@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { useState } from "react";
 import CountUpModule from "react-countup";
 const CountUp = CountUpModule.default || CountUpModule;
@@ -23,7 +23,7 @@ const About = () => {
         className="hidden min-[360px]:block top-37.5 right-2 w-14 sm:top-36 sm:right-8 sm:w-24 lg:top-28 lg:w-20 xl:top-auto xl:right-[14%] xl:bottom-14 xl:w-60"
       />
 
-      <motion.div
+      <m.div
         variants={fadeIn("right", 0.2)}
         initial="hidden"
         animate="show"
@@ -31,11 +31,11 @@ const About = () => {
         className="hidden xl:flex absolute bottom-0 -left-92.5"
       >
         {/* <Avatar /> */}
-      </motion.div>
+      </m.div>
 
       <div className="relative z-10 container mx-auto h-full flex flex-col items-center xl:flex-row gap-x-6">
         <div className="flex-1 flex flex-col justify-center">
-          <motion.h1
+          <m.h1
             variants={fadeIn("right", 0.2)}
             initial="hidden"
             animate="show"
@@ -43,8 +43,8 @@ const About = () => {
             className="h2"
           >
             About <span className="text-accent">Me.</span>
-          </motion.h1>
-          <motion.p
+          </m.h1>
+          <m.p
             variants={fadeIn("right", 0.4)}
             initial="hidden"
             animate="show"
@@ -71,9 +71,9 @@ const About = () => {
             Outside of writing code, I like exploring better ways to structure
             applications, improve performance and turn ideas into working
             products.
-          </motion.p>
+          </m.p>
 
-          <motion.div
+          <m.div
             variants={fadeIn("right", 0.6)}
             initial="hidden"
             whileInView="show"
@@ -117,10 +117,10 @@ const About = () => {
                 </div>
               </div>
             </div>
-          </motion.div>
+          </m.div>
         </div>
 
-        <motion.div
+        <m.div
           variants={fadeIn("left", 0.4)}
           initial="hidden"
           whileInView="show"
@@ -149,7 +149,7 @@ const About = () => {
             ))}
           </div>
 
-          <motion.div
+          <m.div
             key={index}
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
@@ -174,8 +174,8 @@ const About = () => {
                 </div>
               </div>
             ))}
-          </motion.div>
-          </motion.div>
+          </m.div>
+          </m.div>
       </div>
     </div>
   );

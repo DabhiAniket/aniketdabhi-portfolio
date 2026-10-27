@@ -2,6 +2,13 @@
 // build-time SEO (structured data on /work). Add new projects here; never remove one.
 export const projects = [
   {
+    title: "Jigar Matka House – Pottery Shop",
+    path: "/thumb6.webp",
+    link: "https://jigar-pot-shop.vercel.app/",
+    description:
+      "E-commerce storefront for handcrafted clay matkas, terracotta cookware and planters, with a bilingual Gujarati hero, festive collections and order tracking.",
+  },
+  {
     title: "Perfume Website",
     path: "/thumb4.webp",
     link: "https://perfume-pi-five.vercel.app/",
